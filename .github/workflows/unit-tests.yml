@@ -21,5 +21,7 @@ jobs:
       run: pip3 install ninja
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
+    - name: Setup gtest
+      uses: CyberZHG/github-action-gtest@master
     - name: Run
       run: Firmware/unit_tests/run -c
