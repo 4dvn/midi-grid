@@ -7,7 +7,8 @@ print_usage() {
   -m only tests, affected by recent changes are to be ran
   -n if build.ninja file is not found in test_path directory, the script shouldn't regenerate it
   -c generate coverage report
-  -o open coverage report in browser after generating it"
+  -o open coverage report in browser after generating it
+  -g monochrome output"
 }
 
 readonly WORKING_DIR=$pwd
@@ -18,25 +19,33 @@ readonly BROWSER='xdg-open'
 
 readonly BUILD_FILENAME=build.ninja
 
-readonly RED='\033[0;31m'
-readonly GREEN='\033[0;32m'
-readonly NC='\033[0m' # No Color
-
 modified_flag=false
 no_generation_flag=false
 coverage_flag=false
 open_coverage_report_flag=false
+no_color_flag=false
 
-while getopts 'mnco' flag; do
+while getopts 'mncog' flag; do
     case "${flag}" in
         m) modified_flag=true ;;
         n) no_generation_flag=true ;;
         c) coverage_flag=true ;;
         o) open_coverage_report_flag=true ;;
+        g) no_color_flag=true ;;
         *) print_usage
             exit 1 ;;
     esac
 done
+
+if [[ "${no_color_flag}" = true ]]; then
+    readonly RED=''
+    readonly GREEN=''
+    readonly NC=''
+else
+    readonly RED='\033[0;31m'
+    readonly GREEN='\033[0;32m'
+    readonly NC='\033[0m' # No Color
+fi
 
 passed_tests=()
 failed_tests=()
