@@ -22,7 +22,7 @@ jobs:
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
     - name: Setup gtest
-      uses: CyberZHG/github-action-gtest@master"
+      uses: CyberZHG/github-action-gtest@master
       with:
         args: "-e ."
     - name: Run
