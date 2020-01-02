@@ -24,6 +24,6 @@ jobs:
     - name: Setup gtest
       uses: CyberZHG/github-action-gtest@master
       with:
-        args: "-e ."
+        runs: "./"
     - name: Run
       run: Firmware/unit_tests/run -c
