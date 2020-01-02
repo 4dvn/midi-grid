@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Install Python packages
-      uses: pip install ninja
+      run: pip install ninja
 
     - name: Run
       run: Firmware/unit_tests/run -c
