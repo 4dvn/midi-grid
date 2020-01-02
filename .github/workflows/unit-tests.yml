@@ -25,4 +25,3 @@ jobs:
       uses: zukaitis/github-action-gtest@master
     - name: Run
       run: Firmware/unit_tests/run -c
-
