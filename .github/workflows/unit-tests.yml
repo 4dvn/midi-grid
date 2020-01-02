@@ -21,4 +21,4 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Run
-      run: Firmware/unit-tests/run -c
+      run: Firmware/unit_tests/run -c
