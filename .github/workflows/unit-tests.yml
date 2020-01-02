@@ -22,6 +22,6 @@ jobs:
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
     - name: Setup gtest
-      uses: CyberZHG/github-action-gtest@master
     - name: Run
+      uses: CyberZHG/github-action-gtest@master
       run: Firmware/unit_tests/run -c
