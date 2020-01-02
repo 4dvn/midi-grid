@@ -3,9 +3,11 @@
 # Run unit tests
 
 print_usage() {
-    echo "Usage:
-  -m flag specifies, that only tests, affected by recent changes shall be ran
-  -n flag specifies, that if build.ninja file is not found in test_path directory, the script shouldn't regenerate it"
+    echo "Input flag usage:
+  -m only tests, affected by recent changes are to be ran
+  -n if build.ninja file is not found in test_path directory, the script shouldn't regenerate it
+  -c generate coverage report
+  -o open coverage report in browser after generating it"
 }
 
 readonly WORKING_DIR=$pwd
@@ -23,12 +25,14 @@ readonly NC='\033[0m' # No Color
 modified_flag=false
 no_generation_flag=false
 coverage_flag=false
+open_coverage_report_flag=false
 
-while getopts 'mnc' flag; do
+while getopts 'mnco' flag; do
     case "${flag}" in
         m) modified_flag=true ;;
         n) no_generation_flag=true ;;
         c) coverage_flag=true ;;
+        o) open_coverage_report_flag=true ;;
         *) print_usage
             exit 1 ;;
     esac
@@ -93,6 +97,12 @@ elif [[ "${number_of_passed_tests}" = "${number_of_tests_ran}" ]]; then
     passed_str="all"
 fi
 
+exit_value=0 # no error
+if [[ "${number_of_failed_tests}" != "0" ]]; then
+    exit_value=1 # output non-zero value on exit
+fi
+
+
 echo "${number_of_tests_ran} unit tests were ran, ${passed_str} of them have passed."
 
 for test in ${passed_tests[*]}
@@ -120,7 +130,12 @@ if [[ "${coverage_flag}" = true ]]; then
 
     echo "Coverage report generated, it can be accessed at:"
     echo "${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html"
-    ${BROWSER} ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html
+
+    if [[ "${open_coverage_report_flag}" = true ]]; then
+        ${BROWSER} ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html
+    fi
 fi
 
 cd ${WORKING_DIR}
+
+exit ${exit_value}
