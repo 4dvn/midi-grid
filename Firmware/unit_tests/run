@@ -134,13 +134,11 @@ if [[ "${coverage_flag}" = true ]]; then
     lcov --c --directory ${OBJECT_DIR_NAME} --output-file ${COVERAGE_DIR_NAME}/coverage_unfiltered.info >/dev/null 2>&1
     cd ${COVERAGE_DIR_NAME}
     lcov --remove coverage_unfiltered.info -o coverage_filtered.info \
-        '/usr/include/*' '/usr/src/*' '*submodules/*' '*unit_tests/*' '*Interface.h' >/dev/null 2>&1
-    genhtml coverage_filtered.info --output-directory . >/dev/null 2>&1
+        '/usr/include/*' '/usr/src/*' '*submodules/*' '*unit_tests/*' '*Interface.h' #>/dev/null 2>&1
+    genhtml coverage_filtered.info --output-directory . #>/dev/null 2>&1
 
     echo "Coverage report generated, it can be accessed at:"
     echo "${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html"
-
-    ls ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}
 
     if [[ "${open_coverage_report_flag}" = true ]]; then
         ${BROWSER} ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html
