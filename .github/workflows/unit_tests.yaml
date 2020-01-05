@@ -25,6 +25,8 @@ jobs:
       run: .github/workflows/setup_gtest
     - name: Run
       run: Firmware/unit_tests/run -c
+    - name: Check what's happening
+      run: ls Firmware/unit_tests/coverage_report
     - name: Upload coverage report
       uses: actions/upload-artifact@v1
       with:
