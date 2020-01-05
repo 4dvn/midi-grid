@@ -22,7 +22,7 @@ jobs:
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
     - name: Setup gtest
-      uses: zukaitis/github-action-gtest@master
+      run: .github/workflows/setup_gtest
     - name: Run
       run: Firmware/unit_tests/run -c
 
