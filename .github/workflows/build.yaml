@@ -18,7 +18,9 @@ jobs:
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@master
     - name: Install Python packages
-      run: pip3 install ninja intelhex
+      run: pip3 install ninja
+    - name: Install Python 2 packages
+      run: pip2 install intelhex
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
     - name: Setup ARM GNU tools
