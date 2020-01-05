@@ -20,8 +20,6 @@
         "${source_dir}/configs",
         "${ut_dir}/../submodules/etl/include",
         "/usr/src/googletest/googletest/include",
-        "/usr/src/googletest/googlemock/include",
-        "/googletest/googletest/include",
-        "/googletest/googlemock/include"
+        "/usr/src/googletest/googlemock/include"
     ]
 }
