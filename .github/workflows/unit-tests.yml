@@ -26,4 +26,3 @@ jobs:
     - name: Run
       run: Firmware/unit_tests/run -c
 
-
