@@ -50,8 +50,6 @@ fi
 passed_tests=()
 failed_tests=()
 
-ls /
-
 for test_path in ${UNIT_TESTS_DIR}/tests/*/
 do
     test_name=${test_path%*/} # remove the trailing "/"

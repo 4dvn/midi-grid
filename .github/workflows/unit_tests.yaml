@@ -1,8 +1,6 @@
-name: unit-tests
+name: Unit tests
 on: 
   push:
-    branches:
-      - master
     paths-ignore:
       - '**.md'
   pull_request:
@@ -10,8 +8,8 @@ on:
       - '**.md'
 
 jobs:
-  build:
-    name: Build
+  unit_tests:
+    name: Unit tests
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +25,8 @@ jobs:
       run: .github/workflows/setup_gtest
     - name: Run
       run: Firmware/unit_tests/run -c
-
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage_report
+        path: /home/runner/work/midi-grid/midi-grid/Firmware/unit_tests/coverage_report

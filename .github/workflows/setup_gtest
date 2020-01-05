@@ -2,7 +2,6 @@
 #
 # Set up gtest
 
-
 wget https://github.com/google/googletest/archive/master.zip
 unzip master.zip
 sudo mkdir -p /usr/src/googletest/build
