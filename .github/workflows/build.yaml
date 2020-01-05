@@ -24,7 +24,7 @@ jobs:
     - name: Setup ARM GNU tools
       run: sudo apt install gcc-arm-none-eabi
     - name: Build
-      run: ninja Firmware
+      run: ninja Firmware/
 #    - name: Upload coverage report
 #      uses: actions/upload-artifact@v1
 #      with:
