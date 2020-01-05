@@ -23,10 +23,10 @@ jobs:
       uses: seanmiddleditch/gha-setup-ninja@master
     - name: Setup gtest
       run: .github/workflows/setup_gtest
+    - name: Setup lcov
+      run: sudo apt install lcov
     - name: Run
       run: Firmware/unit_tests/run -c
-    - name: Check what's happening
-      run: ls Firmware/unit_tests/coverage_report
     - name: Upload coverage report
       uses: actions/upload-artifact@v1
       with:
