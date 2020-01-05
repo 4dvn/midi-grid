@@ -140,6 +140,8 @@ if [[ "${coverage_flag}" = true ]]; then
     echo "Coverage report generated, it can be accessed at:"
     echo "${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html"
 
+    ls ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}
+
     if [[ "${open_coverage_report_flag}" = true ]]; then
         ${BROWSER} ${UNIT_TESTS_DIR}/${COVERAGE_DIR_NAME}/index.html
     fi

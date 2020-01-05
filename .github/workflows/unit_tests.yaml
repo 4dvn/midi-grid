@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: coverage_report
-        path: Firmware/unit_tests/coverage_report/index.html
+        path: Firmware/unit_tests/coverage_report
