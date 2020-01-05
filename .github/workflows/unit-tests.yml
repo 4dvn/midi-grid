@@ -13,6 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    uses: zukaitis/github-action-gtest@master
 
     steps:
     - name: Checkout
@@ -21,8 +22,8 @@ jobs:
       run: pip3 install ninja
     - name: Setup ninja-build
       uses: seanmiddleditch/gha-setup-ninja@master
-    - name: Setup gtest
-      uses: zukaitis/github-action-gtest@master
+#    - name: Setup gtest
+#      uses: zukaitis/github-action-gtest@master
     - name: Run
       run: Firmware/unit_tests/run -c
 

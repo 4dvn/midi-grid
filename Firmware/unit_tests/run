@@ -50,7 +50,7 @@ fi
 passed_tests=()
 failed_tests=()
 
-ls /usr/src/googletest/googletest/include
+ls /
 
 for test_path in ${UNIT_TESTS_DIR}/tests/*/
 do
