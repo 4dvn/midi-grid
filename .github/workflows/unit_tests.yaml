@@ -1,7 +1,8 @@
 name: Unit Tests
 on: 
   push:
-    branch: chaos # temporarily disabling this CI action to run other one more efficiently
+    branches: 
+      - chaos # temporarily disabling this CI action to run other one more efficiently
     paths-ignore:
       - '**.md'
   pull_request:
