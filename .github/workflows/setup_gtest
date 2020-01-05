@@ -9,8 +9,6 @@ sudo mkdir -p /usr/src/googletest/build
 mv googletest-master googletest
 sudo rsync -a googletest /usr/src
 cd /usr/src/googletest/build
-ls
-ls ..
-cmake ..
-make
-make install 
+sudo cmake ..
+sudo make
+sudo make install 
