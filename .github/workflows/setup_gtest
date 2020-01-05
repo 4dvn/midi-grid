@@ -2,11 +2,12 @@
 #
 # Set up gtest
 
+
 wget https://github.com/google/googletest/archive/master.zip
 unzip master.zip
-mkdir -p /usr/src/googletest/build
+sudo mkdir -p /usr/src/googletest/build
 mv googletest-master googletest
-rsync -a googletest /usr/src
+sudo rsync -a googletest /usr/src
 cd /usr/src/googletest/build
 ls
 ls ..
