@@ -29,26 +29,26 @@ jobs:
       run: cd Firmware && ninja
     - name: Get version
       id: get_version
-      run: git rev-list --count origin/master
+      run: echo "::set-output name=version::$(git rev-list --count origin/master)"
     - name: Compress output files
-      run: cd Firmware/output && 7z a midi-grid_v${{ steps.get_version.output }}.7z midi-grid.*
+      run: cd Firmware/output && 7z a midi-grid_v${{ steps.get_version.outputs.version }}.7z midi-grid.*
 #    - name: Create Release
- #       id: create_release
+#        id: create_release
 #        uses: actions/create-release@v1.0.0
- #       env:
- #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        env:
+#            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #        with:
-  #          tag_name: v${{ steps.get_version.output }}
-  #          release_name: Build v${{ steps.get_version.output }}
+#            tag_name: v${{ steps.get_version.output }}
+#            release_name: Build v${{ steps.get_version.output }}
 #            draft: false
-  #          prerelease: true
- #   - name: Upload Release Asset
-  #      id: upload-release-asset 
-  #      uses: actions/upload-release-asset@v1.0.1
- #       env:
- #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #      with:
-  #        upload_url: ${{ steps.create_release.outputs.upload_url }}
-   #       asset_path: ./my-artifact.zip
-   #       asset_name: my-artifact.zip
-  #        asset_content_type: application/zip
+#            prerelease: true
+#    - name: Upload Release Asset
+#        id: upload-release-asset 
+#        uses: actions/upload-release-asset@v1.0.1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#          asset_path: ./my-artifact.zip
+#          asset_name: my-artifact.zip
+#          asset_content_type: application/zip
