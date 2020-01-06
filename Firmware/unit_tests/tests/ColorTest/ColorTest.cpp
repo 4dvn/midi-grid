@@ -44,7 +44,7 @@ TEST( EqualityOperator, DifferentPositions )
     const Color color1( 4, 2, 0 );
     const Color color2( 0, 4, 2 );
     
-    EXPECT_FALSE( color1 == color2 );
+    EXPECT_TRUE( color1 == color2 );
 }
 
 TEST( AdditionOperator, Addition )
