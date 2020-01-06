@@ -29,7 +29,7 @@ jobs:
       run: cd Firmware && ninja
     - name: Get version
       id: get_version
-      run: cd midi-grid && git rev-list --count master
+      run: git rev-list --count origin/master
     - name: Compress output files
       run: cd Firmware/output && 7z a midi-grid_v${{ steps.get_version.output }}.7z midi-grid.*
 #    - name: Create Release
