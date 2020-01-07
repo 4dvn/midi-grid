@@ -1,4 +1,5 @@
-[![Build](https://github.com/zukaitis/midi-grid/workflows/Build/badge.svg)](https://github.com/zukaitis/midi-grid/actions?query=workflow%3A%22Build%22) [![Unit Tests](https://github.com/zukaitis/midi-grid/workflows/Unit%20Tests/badge.svg)](https://github.com/zukaitis/midi-grid/actions?query=workflow%3A%22Unit+Tests%22) [![UT coverage](https://codecov.io/github/zukaitis/midi-grid/coverage.svg?branch=master)](https://codecov.io/github/zukaitis/midi-grid?branch=master)
+[![Release](https://img.shields.io/github/v/release/zukaitis/midi-grid?logo=github)](https://github.com/zukaitis/midi-grid/releases/latest) [![Build](https://img.shields.io/github/workflow/status/zukaitis/midi-grid/Build?logo=github)](https://github.com/zukaitis/midi-grid/actions?query=workflow%3A%22Build%22) [![Unit Tests](https://img.shields.io/github/workflow/status/zukaitis/midi-grid/Unit Tests?label=unit%20tests&logo=github)](https://github.com/zukaitis/midi-grid/actions?query=workflow%3A%22Unit+Tests%22) [![UT coverage](https://img.shields.io/codecov/c/github/zukaitis/midi-grid?logo=codecov)](https://codecov.io/github/zukaitis/midi-grid?branch=master)
+
 # midi-grid
 DIY RGB MIDI grid controller
 
